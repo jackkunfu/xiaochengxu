@@ -1,11 +1,10 @@
 {
     "pages": [
+        "pages/photo/photo",
         "pages/my/my",
         "pages/trump/trump",
-        
         "pages/detail/detail",
         "pages/message"
-        
     ],
     "window": {
         "navigationBarBackgroundColor":"#2b2e33",

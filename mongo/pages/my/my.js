@@ -20,7 +20,8 @@ Page({
         list: [{
             text: '我的相册',
             img: '',
-            value: ''
+            value: '',
+            url: '../photo/photo'
         }, {
             text: '我的动态',
             img: '',
@@ -94,7 +95,7 @@ Page({
                         success: res_user => {
                             this.loading = false
                             REQ.result({
-                                url: 'http://holer.org:65015/wx/login', //替换自己的本地服务器地址
+                                url: '/wx/login', //替换自己的本地服务器地址
                                 data: {
                                     code: res.code,
                                     encryptedData: res_user.encryptedData,

@@ -9,6 +9,8 @@ import Promise from 'es6-promise';
 
 var newData = {
 
+    baseUrl: 'http://holer.org:65015',
+
     loading: function(){
         wx.showLoading({
             title: '加载中',
@@ -35,7 +37,7 @@ var newData = {
 
         return new Promise((resolve,reject) => {
             wx.request({
-                url: params.url,
+                url: this.baseUrl + params.url,
                 method: params.method || 'POST',
                 data: Object.assign({}, reqs),
                 header: {

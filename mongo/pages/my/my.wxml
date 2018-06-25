@@ -24,10 +24,12 @@
     <view class="list">
         <block wx:for="{{list}}" wx:key="{{idx}}">
             <view>
-                <image class="img" src="{{item.img || '../../image/icon1.png'}}" /> 
-                <span>{{item.text}}</span>
-                <!-- <span>{{item.value || ''}}</span> -->
-                <image class="icon" src="../../image/icon1.png" />
+                <navigator url="{{item.url}}"> 
+                    <image class="img" src="{{item.img || '../../image/icon1.png'}}" /> 
+                    <span>{{item.text}}</span>
+                    <!-- <span>{{item.value || ''}}</span> -->
+                    <image class="icon" src="../../image/icon1.png" />
+                </navigator>
             </view>
         </block>
         

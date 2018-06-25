@@ -1,11 +1,17 @@
-<import src="../../common/template.wxml"/>
-
-<view class="search">
-    <view class="searchRank">
-        <view class="form">    
-            <input type="text" class="cl" value="{{value}}" bindfocus="onFouse" bindblur="onBlue"/>
-            <icon type="cancel" size="20" color="#fff" catchtap="deleteTxt"/>
-        </view>
+<view class="photo">
+    <view class="add" bindtap="upfile">+
+        <view>上传图片</view>
     </view>
-    <template is="searchTxt" data="{{ranking}}" />
+    <view class="list">
+        <block wx:for="{{list}}" wx:key="{{idx}}">
+            <view>
+                <navigator url="{{item.url}}"> 
+                    <image class="img" src="{{item.img || '../../image/icon1.png'}}" /> 
+                    <span>{{item.text}}</span>
+                    <!-- <span>{{item.value || ''}}</span> -->
+                    <image class="icon" src="../../image/icon1.png" />
+                </navigator>
+            </view>
+        </block>
+    </view>
 </view>
