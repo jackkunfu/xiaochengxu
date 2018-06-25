@@ -56,7 +56,10 @@ Page({
     getValues(obj){
         var arr = []
         Object.keys(obj).forEach(el=>{
-            arr.push(obj[el])
+            arr.push({
+                k: el,
+                v: obj[el]
+            })
         })
         return arr
     }

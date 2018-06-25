@@ -95,7 +95,7 @@ Page({
                         success: res_user => {
                             this.loading = false
                             REQ.result({
-                                url: '/wx/login', //替换自己的本地服务器地址
+                                url: REQ.baseUrl+'/wx/login', //替换自己的本地服务器地址
                                 data: {
                                     code: res.code,
                                     encryptedData: res_user.encryptedData,

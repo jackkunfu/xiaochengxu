@@ -3,8 +3,27 @@
     font-size: 30rpx;
 }
 
-.photo .add{
-    padding: 50rpx;
+.photo .add {
+    padding: 30rpx 0 50rpx;
     font-size: 30rpx;
     text-align: center;
+    color: #ccc;
+    width: 240rpx;
+    /* background: #fff; */
+    border: 1rpx dashed #ccc;
+    margin: 10rpx auto;
+}
+
+.photo .add span {
+    font-size: 80rpx;
+    line-height: 1;
+}
+
+.photo .list{
+    padding: 0 30rpx;
+}
+
+.photo .list image{
+    width: 33.333%;
+    height: 240rpx;
 }

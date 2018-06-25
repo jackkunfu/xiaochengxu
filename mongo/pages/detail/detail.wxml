@@ -31,24 +31,24 @@
     <view class="item">
         <view class="title">基本资料</view>
         <view>
-            <span class="it" wx:for="{{userInfo.self}}" wx:key="{{idx}}">{{item}}</span>
+            <span class="it" wx:for="{{userInfo.self}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
         </view>
     </view>
 
     <view class="item">
         <view class="title">工作情况</view>
-        <span class="it" wx:for="{{userInfo.work}}" wx:key="{{idx}}">{{item}}</span>
+        <span class="it" wx:for="{{userInfo.work}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
     </view>
 
     <view class="item">
         <view class="title">择偶条件</view>
-        <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item}}</span>
+        <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
     </view>
 
     <view class="item">
         <view class="title">兴趣爱好</view>
         <view>
-            <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item}}</span>
+            <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
         </view>
     </view>
 

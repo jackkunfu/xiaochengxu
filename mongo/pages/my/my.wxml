@@ -1,9 +1,12 @@
 <view class="my">
     
-    <view class="top">
-        <image class="user-avatar" src="{{userInfo.avatarurl}}" onclick="getImage"/>
+    <view class="top" bindtap="">
+        <image class="user-avatar" src="{{userInfo.avatarurl}}"/>
         <text class="user-nickname">{{userInfo.nikename}}</text>
-        <text class="user-id"><span>ID</span> {{userInfo.id}}</text>
+        <view class="user-id">
+            <image class="user-avatar" src="{{userInfo.avatarurl}}" onclick="getImage"/>
+            {{userInfo.id}}
+        </view>
     </view>
 
     <view class="like">

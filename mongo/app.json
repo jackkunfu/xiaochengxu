@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/photo/photo",
         "pages/my/my",
+        "pages/photo/photo",
         "pages/trump/trump",
         "pages/detail/detail",
         "pages/message"

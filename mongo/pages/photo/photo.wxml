@@ -1,17 +1,11 @@
 <view class="photo">
-    <view class="add" bindtap="upfile">+
+    <view class="add" bindtap="upfile">
+        <span>+</span>
         <view>上传图片</view>
     </view>
     <view class="list">
         <block wx:for="{{list}}" wx:key="{{idx}}">
-            <view>
-                <navigator url="{{item.url}}"> 
-                    <image class="img" src="{{item.img || '../../image/icon1.png'}}" /> 
-                    <span>{{item.text}}</span>
-                    <!-- <span>{{item.value || ''}}</span> -->
-                    <image class="icon" src="../../image/icon1.png" />
-                </navigator>
-            </view>
+            <image class="img" src="{{item}}" /> 
         </block>
     </view>
 </view>

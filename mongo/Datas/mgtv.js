@@ -37,7 +37,7 @@ var newData = {
 
         return new Promise((resolve,reject) => {
             wx.request({
-                url: this.baseUrl + params.url,
+                url: params.url,
                 method: params.method || 'POST',
                 data: Object.assign({}, reqs),
                 header: {
