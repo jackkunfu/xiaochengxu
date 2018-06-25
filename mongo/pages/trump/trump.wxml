@@ -1,0 +1,36 @@
+<import src="../../common/template.wxml"/>
+
+<view class="trump">
+
+    <!-- <view class="title">
+        {{title}}
+    </view>  -->
+
+    <view class="PicBg">
+        <image src="{{bg}}" />
+    </view> 
+
+    <view class="content">
+        <swiper indicator-dots="true" class="Bannerswiper" bindchange="changeSwiper" data-bg="{{item.img}}">
+            <block wx:for="{{trumpArr}}" wx:key="picUrl" wx:for-index="idx">
+                <swiper-item>
+                    <view class="swiper-item" id="{{$index}}">
+                      <navigator url="../detail/detail?id={{item.userId}}"> 
+                        <view class="itemCont">
+                          <image src="{{item.img}}" />  
+                          <view class="contMess">
+                            <text class="Mess1">{{item.nikeName}}</text>
+                            <text class="Mess2">{{item.introduce}}</text>
+                          </view>
+                        </view>
+                      </navigator>
+                      <view class="icon">
+                        <image src="../../image/wp.png" class="{{item.zan?'hide':'show'}}" bindtap="zan" data-userid="{{item.userId}}" />
+                        <image src="../../image/wpselect.png" class="{{item.zan?'show':'hide'}}" bindtap="zan" data-userid="{{item.userId}}" />
+                      </view>
+                    </view>
+                </swiper-item>
+            </block>
+        </swiper>
+    </view>
+</view>

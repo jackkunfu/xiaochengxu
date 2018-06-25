@@ -1,0 +1,40 @@
+<view class="my">
+    
+    <view class="top">
+        <image class="user-avatar" src="{{userInfo.avatarurl}}" onclick="getImage"/>
+        <text class="user-nickname">{{userInfo.nikename}}</text>
+        <text class="user-id"><span>ID</span> {{userInfo.id}}</text>
+    </view>
+
+    <view class="like">
+        <span>
+            <text class="num">{{userInfo.myLove}}</text>
+            <text>我喜欢</text>
+        </span>
+        <span>
+            <text class="num">{{userInfo.togetherLove}}</text>
+            <text>互相喜欢</text>
+        </span>
+        <span>
+            <text class="num">{{userInfo.loveMe}}</text>
+            <text>喜欢我</text>
+        </span>
+    </view>
+
+    <view class="list">
+        <block wx:for="{{list}}" wx:key="{{idx}}">
+            <view>
+                <image class="img" src="{{item.img || '../../image/icon1.png'}}" /> 
+                <span>{{item.text}}</span>
+                <!-- <span>{{item.value || ''}}</span> -->
+                <image class="icon" src="../../image/icon1.png" />
+            </view>
+        </block>
+        
+    </view>
+
+
+
+
+    
+</view>

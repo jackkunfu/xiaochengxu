@@ -1,0 +1,55 @@
+<view class="person">
+    <view class="top">
+        <view class="img-ctn">
+            <image class="center-center" src="{{userInfo.img}}" />
+        </view>
+
+        <view class="item">
+             <image class="touxiang" src="{{userInfo.basic.img}}"></image>
+             <view class="time">{{userInfo.time}}</view> 
+            <view class="name">{{userInfo.basic.name}}</view>
+             <view>
+                <span class="sex">{{userInfo.basic.sex}}</span>
+                <span class="xingzuo">{{userInfo.basic.xingzuo || ''}}</span>
+            </view>
+            <view class="motto">{{userInfo.motto}}</view>
+
+            <view class="img-list">
+                <block wx:for="{{userInfo.imgList}}" wx:key="{{idx}}">
+                    <image class="touxiang" src="{{item}}"></image>
+                </block>
+            </view> 
+
+            <!-- <scroll-view scroll-x>
+                <block wx:for="{{userInfo.imgList}}">
+                    <image class="touxiang" src="{{item}}"></image>
+                </block>
+            </scroll-view> -->
+        </view>
+    </view>
+
+    <view class="item">
+        <view class="title">基本资料</view>
+        <view>
+            <span class="it" wx:for="{{userInfo.self}}" wx:key="{{idx}}">{{item}}</span>
+        </view>
+    </view>
+
+    <view class="item">
+        <view class="title">工作情况</view>
+        <span class="it" wx:for="{{userInfo.work}}" wx:key="{{idx}}">{{item}}</span>
+    </view>
+
+    <view class="item">
+        <view class="title">择偶条件</view>
+        <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item}}</span>
+    </view>
+
+    <view class="item">
+        <view class="title">兴趣爱好</view>
+        <view>
+            <span class="it" wx:for="{{userInfo.ask}}" wx:key="{{idx}}">{{item}}</span>
+        </view>
+    </view>
+
+</view>

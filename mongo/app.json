@@ -1,0 +1,46 @@
+{
+    "pages": [
+        "pages/my/my",
+        "pages/trump/trump",
+        
+        "pages/detail/detail",
+        "pages/message"
+        
+    ],
+    "window": {
+        "navigationBarBackgroundColor":"#2b2e33",
+        "navigationBarTextStyle": "white",
+        "navigationBarTitleText": "丘比特之剑",
+        "backgroundColor": "#fff",
+        "backgroundTextStyle": "#dark"
+    },
+    "tabBar": {
+        "color": "#74777e",
+        "selectedColor": "#f06000",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+    "list": [{
+        "pagePath": "pages/message",
+        "iconPath": "image/jx.png",
+        "selectedIconPath": "image/jxselect.png",
+        "text": "消息"
+    },{
+        "pagePath": "pages/trump/trump",
+        "iconPath": "image/ss.png",
+        "selectedIconPath": "image/wpselect.png",
+        "text": "爱情广场"
+    },{
+        "pagePath": "pages/my/my",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/myselect.png",
+        "text": "个人中心"
+    }]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 10000,
+        "downloadFile": 10000
+    },
+    "debug": true
+}

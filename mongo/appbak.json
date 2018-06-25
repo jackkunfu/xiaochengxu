@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/Play/play",
+    "pages/my/my",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/trump/trump"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#2b2e33",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "芒果TV",
+    "backgroundColor": "#fff",
+    "backgroundTextStyle": "#dark"
+  },
+  "tabBar": {
+    "color": "#74777e",
+    "selectedColor": "#f06000",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/trump/trump",
+        "iconPath": "image/ss.png",
+        "selectedIconPath": "image/wpselect.png",
+        "text": "爱情广场"
+      },
+      {
+        "pagePath": "pages/index",
+        "iconPath": "image/jx.png",
+        "selectedIconPath": "image/jxselect.png",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "image/my.png",
+        "selectedIconPath": "image/myselect.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
