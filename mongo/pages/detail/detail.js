@@ -2,29 +2,21 @@ import newData from '../../Datas/mgtv.js';
 Page({
     data: {
         userInfo: {
-            ask: ['a', 'b', 'c']
-        },
-        ask: [{ it: 'a' }, { it: 'a' }, { it: 'a' }, { it: 'a' }]
+            // ask: []
+        }
     },
 
     onLoad(params) {
-        // console.log(params)
-        this.userInfo(params.id || 90)
-        console.log(1)
-        // wx.showLoading({
-        //   title: '加载中',
-        // })
-
-        // setTimeout(function () {
-        //   wx.hideLoading()
-
+        console.log(params)
+        wx.showLoading({
+            title: '加载中',
+        })
+        this.userInfo(params.id)
         //   wx.showToast({
         //       title: '成功',
         //       icon: 'success',
         //       duration: 2000
         //   })
-        // }, 2000)
-
     },
 
     userInfo(id) {
@@ -32,18 +24,22 @@ Page({
         url: 'http://holer.org:65015/user/userinfo', //替换自己的本地服务器地址
         data: id
         }).then(res => {
-            var data = res.data
+            wx.hideLoading()
+            var data = res.data.data || {}
+            console.log(data)
             var userInfo = {
                 basic: {
                     name: data.userInfoVo.nikename,
                     sex: data.userInfoVo.nikename,
                     introduce: data.introduce,
-                    img: data.imgS[0] || ''
+                    img: data.imgS[0] || '',
+                    tags: data.tagS || []
                 },
                 imgs: data.imgS,
                 self: this.getValues(data.userLovePlabVo),
                 ask: this.getValues(data.userLikeVo),
                 work: this.getValues(data.userSchollWorkVo),
+                family: this.getValues(data.userFamilyVo)
                 // work: 
             }
             console.log(userInfo)

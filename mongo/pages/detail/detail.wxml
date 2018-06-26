@@ -5,14 +5,20 @@
         </view>
 
         <view class="item">
-             <image class="touxiang" src="{{userInfo.basic.img}}"></image>
-             <view class="time">{{userInfo.time}}</view> 
+            <image class="touxiang" src="{{userInfo.basic.img}}"></image>
+            <view class="time">{{userInfo.time}}</view> 
             <view class="name">{{userInfo.basic.name}}</view>
-             <view>
+            <view>
                 <span class="sex">{{userInfo.basic.sex}}</span>
-                <span class="xingzuo">{{userInfo.basic.xingzuo || ''}}</span>
+                <!-- <span class="xingzuo">{{userInfo.basic.xingzuo || ''}}</span> -->
+                <view>
+                    <block wx:for="{{userInfo.basic.tags}}" wx:key="{{idx}}">
+                        <span class="xingzuo">{{item}}</span>
+                    </block>
+                </view>
+                <span class="introduce">自我评价：{{userInfo.basic.introduce || ''}}</span>
             </view>
-            <view class="motto">{{userInfo.motto}}</view>
+            <!-- <view class="motto">{{userInfo.motto}}</view> -->
 
             <view class="img-list">
                 <block wx:for="{{userInfo.imgList}}" wx:key="{{idx}}">
@@ -38,6 +44,11 @@
     <view class="item">
         <view class="title">工作情况</view>
         <span class="it" wx:for="{{userInfo.work}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
+    </view>
+
+    <view class="item">
+        <view class="title">家庭情况</view>
+        <span class="it" wx:for="{{userInfo.family}}" wx:key="{{idx}}">{{item.k}}: {{item.v}}</span>
     </view>
 
     <view class="item">
