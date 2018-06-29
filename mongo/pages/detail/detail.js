@@ -21,7 +21,7 @@ Page({
 
     userInfo(id) {
         newData.result({
-        url: 'http://holer.org:65015/user/userinfo', //替换自己的本地服务器地址
+        url: '/user/userinfo', //替换自己的本地服务器地址
         data: id
         }).then(res => {
             wx.hideLoading()

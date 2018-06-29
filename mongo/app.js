@@ -36,4 +36,4 @@ App(
 )
 
 var appInstance = getApp()
-console.log(appInstance) // I am global data
+// console.log(appInstance) // I am global data

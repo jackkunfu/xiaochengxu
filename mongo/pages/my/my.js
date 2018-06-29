@@ -95,7 +95,7 @@ Page({
                         success: res_user => {
                             this.loading = false
                             REQ.result({
-                                url: REQ.baseUrl+'/wx/login', //替换自己的本地服务器地址
+                                url: '/wx/login', //替换自己的本地服务器地址
                                 data: {
                                     code: res.code,
                                     encryptedData: res_user.encryptedData,
@@ -111,6 +111,10 @@ Page({
                                 }
 
                                 var token = user.data.data
+                                console.log('token')
+                                console.log(token)
+
+                                if(!token) return
 
                                 this.fetchUsrInfo(token)
 
@@ -126,7 +130,8 @@ Page({
                                 getApp().globalData.token = token
                                 // console.log('user.data.data')
                                 // console.log(token)
-                                // console.log(getApp().globalData.token)
+                                console.log(getApp().globalData.token)
+                                console.log(appInstance) // I am global data
                             })
 
                         }
@@ -138,8 +143,9 @@ Page({
 
     fetchUsrInfo(token){
         REQ.result({
-            url: 'http://holer.org:65015/user/userTokenByInfo', //替换自己的本地服务器地址
-            data: token
+            url: '/user/userTokenByInfo', //替换自己的本地服务器地址
+            // token: token,
+            method: 'get'
         }).then(user => {
             console.log('fetchUsrInfo')
             console.log(user)

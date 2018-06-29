@@ -22,27 +22,46 @@ var newData = {
 
         var _this = this;
 
-        let md5 = require('./md5.min.js')
+        var data = params.data || {}
+        var url = params.url
+        var method = params.method
+        delete params.data
+        delete params.url
+        delete params.method
+        
         let reqs = Object.assign({}, params)
-        delete reqs.url
+        
         let t = new Date().getTime()
         reqs.version = reqs.version || '1.0'
         reqs.time = t
+        let md5 = require('./md5.min.js')
         reqs.sing = md5(reqs.version + '' + t + 'sjhduiay#$%^&*(')
-        reqs.data = reqs.data || {}
-        console.log('globalData.token')
-        var gbToken = getApp().globalData.token
+
+        // reqs.data = reqs.data || {}   // 传参都包裹在data字段里
+
+        if (data){
+            Object.keys(data).forEach(key => {
+                reqs[key] = data[key]
+            })
+        }
+        
+        // console.log('globalData.token')
+        // var gbToken = 
         // console.log(gbToken)
-        if (gbToken) reqs.token = gbToken
+        // if (gbToken) reqs.token = gbToken
+
+        var header = {
+            // 'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            Token: getApp().globalData.token || ''
+        }
 
         return new Promise((resolve,reject) => {
             wx.request({
-                url: params.url,
-                method: params.method || 'POST',
+                url: this.baseUrl + url,
+                method: method || 'post',
                 data: Object.assign({}, reqs),
-                header: {
-                'Content-Type': 'application/json'
-                },
+                header,
                 success: resolve,
                 fail: reject 
             })
@@ -51,11 +70,7 @@ var newData = {
     },
 
     result : function (params) {
-
-        var _this = this;
-
-        return _this.fetchApi(params).then( res => res, e => { console.log(e) }).catch(e => { console.log(e) })
-
+        return this.fetchApi(params).then( res => res, e => { console.log(e) }).catch(e => { console.log(e) })
     }
 
 }
