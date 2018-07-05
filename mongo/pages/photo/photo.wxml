@@ -5,7 +5,7 @@
     </view>
     <view class="list">
         <block wx:for="{{list}}" wx:key="{{idx}}">
-            <image class="img" src="{{item}}" /> 
+            <image class="img" src="{{item}}" bindtap="delPhoto" data-url="{{item}}" /> 
         </block>
     </view>
 </view>
